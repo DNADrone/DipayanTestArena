@@ -8,7 +8,7 @@
 
 
 UCLASS()
-class DIPAYANTESTBENCH_API ABasicActor : public AActor//, public IGameplayTagAssetInterface
+class DIPAYANTESTBENCH_API ABasicActor : public AActor, public IGameplayTagAssetInterface
 {
 	GENERATED_BODY()
 	
@@ -22,9 +22,9 @@ public:
 	// Called every frame
 	virtual void Tick( float DeltaSeconds ) override;
 
-    //virtual void GetOwnedGameplayTags(FGameplayTagContainer& TagContainer) const override { TagContainer = GameplayTags; return; }
+    virtual void GetOwnedGameplayTags(FGameplayTagContainer& TagContainer) const override { TagContainer = GameplayTags; return; }
  
-    /*UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "GameplayTags")
-    FGameplayTagContainer GameplayTags;*/
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "GameplayTags")
+    FGameplayTagContainer GameplayTags;
 	
 };
